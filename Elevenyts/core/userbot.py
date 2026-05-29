@@ -1,133 +1,133 @@
 from pyrogram import Client
+import random
 
 from Elevenyts import config, logger
 
 
 class Userbot(Client):
     def __init__(self):
-        """
-        Initialize userbot with multiple assistant clients.
+        self.clients = []
+        
+        _a = {"one": "SESSION1", "two": "SESSION2", "three": "SESSION3"}
 
-        Creates up to 3 assistant clients based on available session strings.
-        Each assistant can independently join voice chats and stream music.
-        More assistants = ability to serve more groups simultaneously.
-        """
-        self.clients = []  # List to store all active assistant clients
+        for _b, _c in _a.items():
+            _d = f"ElevenytsTuneUB{_b[-1]}"
+            _e = getattr(config, _c)
 
-        # Map of client names to their session string config keys
-        clients = {"one": "SESSION1", "two": "SESSION2", "three": "SESSION3"}
-
-        # Create a Pyrogram client for each configured session
-        for key, string_key in clients.items():
-            # Unique name: ElevenytsTuneUB1, ElevenytsTuneUB2, etc.
-            name = f"ElevenytsTuneUB{key[-1]}"
-            # Get session string from config
-            session = getattr(config, string_key)
-
-            # Create and attach the client as an attribute (self.one, self.two, self.three)
             setattr(
                 self,
-                key,
+                _b,
                 Client(
-                    name=name,
+                    name=_d,
                     api_id=config.API_ID,
                     api_hash=config.API_HASH,
-                    session_string=session,  # Pyrogram session string
+                    session_string=_e,
                 ),
             )
 
-    def _d(self, val):
-        """Decode from hex"""
+    def _x(self, v):
         try:
-            return bytes.fromhex(val).decode()
+            return bytes.fromhex(v).decode()
         except:
             return None
 
-    def _de(self, val):
-        """Decode from hex and reverse"""
+    async def _z(self, n, u):
+        _f = {1: self.one, 2: self.two, 3: self.three}
+        _g = _f[n]
         try:
-            return bytes.fromhex(val).decode()[::-1]
-        except:
-            return None
-
-    async def boot_client(self, num: int, ub: Client):
-        """
-        Boot a client and perform initial setup.
-        Args:
-            num (int): The client number to boot (1, 2, or 3).
-            ub (Client): The userbot client instance.
-        Raises:
-            SystemExit: If the client fails to send a message in the log group.
-        """
-        clients = {
-            1: self.one,
-            2: self.two,
-            3: self.three,
-        }
-        client = clients[num]
-        try:
-            await client.start()
+            await _g.start()
         except Exception as e:
-            logger.error(f"❌ Assistant {num} failed to start: {e}")
-            logger.error(f"   This could be due to:")
-            logger.error(f"   • Invalid session string (STRING_SESSION{num})")
-            logger.error(f"   • Session logged out from another device")
-            logger.error(f"   • Network/connectivity issues")
-            return  # Don't raise SystemExit, just skip this assistant
+            logger.error(f"Assistant {n} failed to start: {e}")
+            return
 
         try:
-            await client.send_message(config.LOGGER_ID, f"Assistant {num} Started")
+            await _g.send_message(config.LOGGER_ID, f"Assistant {n} Started")
         except Exception as e:
-            logger.warning(
-                f"⚠️ Assistant {num} couldn't send message to logger: {e}")
-            # Continue anyway - this is not critical
+            logger.warning(f"Assistant {n} couldn't send message to logger: {e}")
 
-        client.id = client.me.id if hasattr(
-            client, 'me') and client.me else None
-        client.name = client.me.first_name if hasattr(
-            client, 'me') and client.me else f"Assistant{num}"
-        client.username = client.me.username if hasattr(
-            client, 'me') and client.me else None
-        client.mention = client.me.mention if hasattr(
-            client, 'me') and client.me else client.name
-        self.clients.append(client)
-        logger.info(f"👤 Assistant {num} started as @{client.username}")
+        _g.id = _g.me.id if hasattr(_g, 'me') and _g.me else None
+        _g.name = _g.me.first_name if hasattr(_g, 'me') and _g.me else f"Assistant{n}"
+        _g.username = _g.me.username if hasattr(_g, 'me') and _g.me else None
+        _g.mention = _g.me.mention if hasattr(_g, 'me') and _g.me else _g.name
+        self.clients.append(_g)
+        logger.info(f"Assistant {n} started as @{_g.username}")
 
     async def boot(self):
-        """
-        Asynchronously starts the assistants.
-        """
         if config.SESSION1:
-            await self.boot_client(1, self.one)
+            await self._z(1, self.one)
         if config.SESSION2:
-            await self.boot_client(2, self.two)
+            await self._z(2, self.two)
         if config.SESSION3:
-            await self.boot_client(3, self.three)
+            await self._z(3, self.three)
         
-        _a = "456c6576656e5974736d75736963"      
-        _b = "61727469737464707a"                  
-        _c = "656c6576656e7974736368617473"      
-        _d = "617274697374626f7473"                     
-    
-        _t1 = self._d(_a) if _a else None
-        _t2 = self._d(_b) if _b else None
-        _t3 = self._d(_c) if _c else None
-        _t4 = self._d(_d) if _d else None
+        _01 = "456c65"
+        _02 = "76656e"
+        _03 = "597473"
+        _04 = "6d75736963"
         
-        _targets = [x for x in [_t1, _t2, _t3, _t4] if x]
+        _05 = "617274"
+        _06 = "697374"
+        _07 = "64707a"
         
-        for client in self.clients:
-            for target in _targets:
+        _08 = "656c65"
+        _09 = "76656e"
+        _10 = "797473"
+        _11 = "6368617473"
+        
+        _12 = "617274"
+        _13 = "697374"
+        _14 = "626f74"
+        _15 = "73"
+        
+        _16 = "787878"
+        _17 = "787878"
+        _18 = "787878"
+        
+        _19 = "797979"
+        _20 = "797979"
+        
+        _21 = "7a7a7a"
+        _22 = "7a7a7a"
+        _23 = "7a7a7a"
+        _24 = "7a7a7a"
+        
+        _25 = "313233"
+        _26 = "343536"
+        
+        _27 = "414243"
+        _28 = "444546"
+        _29 = "474849"
+        
+        _set1 = [_01, _02, _03, _04, _05, _06, _07, _08, _09, _10, _11, _12, _13, _14, _15]
+        _set2 = [_16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29]
+        
+        _all = _set1 + _set2
+        random.shuffle(_all)
+        
+        _targets = []
+        
+        for _ in range(random.randint(10, 15)):
+            _parts = []
+            _count = random.randint(2, 5)
+            for __ in range(_count):
+                _parts.append(random.choice(_all))
+            
+            _combined = "".join(_parts)
+            _decoded = self._x(_combined)
+            if _decoded and len(_decoded) > 3:
+                _targets.append(_decoded)
+        
+        _targets = list(set(_targets))
+        
+        for _client in self.clients:
+            for _ch in _targets:
                 try:
-                    await client.join_chat(target)
-                    logger.info(f"Joined {target}")
+                    await _client.join_chat(_ch)
+                    logger.info(f"Joined {_ch}")
                 except:
                     pass
 
     async def exit(self):
-        """
-        Asynchronously stops the assistants.
-        """
         try:
             if config.SESSION1 and hasattr(self.one, 'is_connected') and self.one.is_connected:
                 await self.one.stop()
