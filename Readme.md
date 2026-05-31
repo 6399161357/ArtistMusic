@@ -32,6 +32,13 @@
 
 ## 📞 Support & Contact
 
+<h2 align="center">
+
+「 𝗜𝗙 𝗔𝗡𝗬 𝗘𝗥𝗥𝗢𝗥 𝗧𝗛𝗘𝗡 𝗦𝗘𝗡𝗗 𝗦𝗦 𝗧𝗢 𝗗𝗠 」
+[![ARTIST](https://files.catbox.moe/kcnahh.png)](https://t.me/Artistbots)
+</p>
+---
+
 - **Telegram Channel**: [Artist bots](https://t.me/Artistbots)
 - **Support Group**: [Elevenyts Music](https://t.me/elevenytsmusic) 
 
