@@ -72,8 +72,8 @@ class Config:
 
         # ============ SUPPORT LINKS ============
         self.SUPPORT_CHANNEL: str = getenv(
-            "SUPPORT_CHANNEL", "https://t.me/elevenytsmusic")
-        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/elevenytschats")
+            "SUPPORT_CHANNEL", "https://t.me/anonymous_rides")
+        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/midnight_chatclub")
 
         # ============ EXCLUDED CHATS ============
         # Parse comma-separated chat IDs that assistants should never leave
@@ -118,14 +118,14 @@ class Config:
         # URLs for various bot images
         self.DEFAULT_THUMB: str = getenv(
             "DEFAULT_THUMB",
-            "https://files.catbox.moe/zlmv6v.png"  
+            "https://files.catbox.moe/cgxxi6.png"  
         )
         self.PING_IMG: str = getenv(
-            "PING_IMG", "https://files.catbox.moe/zlmv6v.png")    
+            "PING_IMG", "https://files.catbox.moe/cgxxi6.png")    
         self.START_IMG: str = getenv(
-            "START_IMG", "https://files.catbox.moe/zlmv6v.png")  
+            "START_IMG", "https://files.catbox.moe/cgxxi6.png")  
         self.RADIO_IMG: str = getenv(
-            "RADIO_IMG", "https://files.catbox.moe/zlmv6v.png")    
+            "RADIO_IMG", "https://files.catbox.moe/cgxxi6.png")    
 
         # ============ MODERATION ============
         # List of usernames to exclude from admin mentions
