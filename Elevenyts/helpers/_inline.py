@@ -189,14 +189,14 @@ class Inline:
             ],
             [
                 self.ikb(text=lang["help"], callback_data="help", style=ButtonStyle.SUCCESS),
-                self.ikb(text="ꜱᴏᴜʀᴄᴇ", url="https://github.com/elevenyts/ArtistMusic", style=ButtonStyle.SUCCESS),
+                self.ikb(text="contact", url="https://t.me/light_speedy", style=ButtonStyle.SUCCESS),
             ],
             [
                 self.ikb(text=lang["support"], url=config.SUPPORT_CHAT, style=ButtonStyle.PRIMARY),
                 self.ikb(text=lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY),
             ],
             [
-                self.ikb(text="YouTube", url="https://youtube.com/@artistbots", style=ButtonStyle.DANGER),
+                self.ikb(text="owner", url="https://t.me/light_speedy", style=ButtonStyle.DANGER),
             ],
         ]
         return self.ikm(rows)
