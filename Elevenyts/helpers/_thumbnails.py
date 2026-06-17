@@ -57,7 +57,7 @@ ICONS_Y = BAR_Y + 65
 MAX_TITLE_WIDTH = 850
 
 def _decode_f():
-    return "L ɪ ɢ ʜ ᴛ"
+    return "L‎ɪ‎ɢ‎ʜ‎ᴛ"
 
 def trim_to_width(text: str, font, max_w: int) -> str:
 
